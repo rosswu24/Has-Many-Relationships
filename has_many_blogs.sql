@@ -12,8 +12,8 @@ id SERIAL NOT NULL PRIMARY KEY,
 username VARCHAR(90) NULL DEFAULT NULL,
 first_name VARCHAR(90) NULL DEFAULT NULL,
 last_name VARCHAR(90) NULL DEFAULT NULL,
-create_at timestamp DEFAULT NOW(),
-update_at timestamp DEFAULT NOW()
+created_at timestamp DEFAULT NOW(),
+updated_at timestamp DEFAULT NOW()
 );
 
 CREATE TABLE posts(
@@ -21,16 +21,16 @@ id SERIAL NOT NULL PRIMARY KEY,
 title VARCHAR(180) NULL DEFAULT NULL,
 url VARCHAR(510) NULL DEFAULT NULL,
 content text NULL DEFAULT NULL,
-create_at timestamp DEFAULT NOW(),
-update_at timestamp DEFAULT NOW(),
+created_at timestamp DEFAULT NOW(),
+updated_at timestamp DEFAULT NOW(),
 user_id INTEGER NOT NULL REFERENCES users (id)
 );
 
 CREATE TABLE comments(
 id SERIAL NOT NULL PRIMARY KEY,
 body VARCHAR (510) NULL DEFAULT NULL,
-create_at timestamp DEFAULT NOW(),
-update_at timestamp DEFAULT NOW(),
+created_at timestamp DEFAULT NOW(),
+updated_at timestamp DEFAULT NOW(),
 user_id INTEGER NOT NULL REFERENCES users (id),
 posts_id INTEGER NOT NULL REFERENCES posts (id)
 );

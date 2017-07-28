@@ -19,13 +19,13 @@ SELECT users.username
 FROM users
 INNER JOIN posts
 ON users.id = posts.user_id
-WHERE posts.create_at > '2015-01-15';
+WHERE posts.created_at > '2015-01-15';
 
 SELECT posts.title, posts.content, users.username
 FROM  posts
 INNER JOIN users
 ON posts.user_id = users.id
-WHERE users.create_at <'2015-01-15';
+WHERE users.created_at <'2015-01-15';
 
 SELECT comments.*, posts.title AS "Post Title"
 FROM comments
@@ -36,13 +36,13 @@ SELECT comments.*, posts.title AS "Post Title", posts.url AS "post_url", comment
 FROM comments
 INNER JOIN posts
 ON comments.posts_id = posts.id
-WHERE posts.create_at < '2015-01-15';
+WHERE posts.created_at < '2015-01-15';
 
 SELECT comments.*, posts.title AS "Post Title", posts.url AS "post_url", comments.body AS "comment_body"
 FROM comments
 INNER JOIN posts
 ON comments.posts_id = posts.id
-WHERE posts.create_at > '2015-01-15';
+WHERE posts.created_at > '2015-01-15';
 
 SELECT comments.*, posts.title AS "Post Title", posts.url AS "post_url", comments.body AS "comment_body"
 FROM comments
