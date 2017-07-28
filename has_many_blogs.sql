@@ -3,9 +3,9 @@ CREATE DATABASE has_many_blogs WITH OWNER has_many_user;
 
 \c has_many_blogs;
 
-DROP TABLE users;
-DROP TABLE posts;
-DROP TABLE comments;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS comments;
 
 CREATE TABLE users(
 id SERIAL NOT NULL PRIMARY KEY,
